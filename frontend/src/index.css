@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* CSS Custom Properties for Mood System */
+:root {
+  /* Colors */
+  --mood-bg-primary: #1E1E1E;
+  --mood-bg-secondary: #2A2A2A;
+  --mood-accent: #4CC9F0;
+  --mood-accent-light: #72D5F5;
+  --mood-text-primary: #FFFFFF;
+  --mood-text-secondary: #A0A0A0;
+  --mood-gradient-start: #1E1E1E;
+  --mood-gradient-end: #2E2E2E;
+  --mood-gradient-direction: 90deg;
+  --mood-question-box-gradient: linear-gradient(135deg, #B8D4E0 0%, #A8C4D0 100%);
+  --mood-glow-color: rgba(76, 201, 240, 0.3);
+
+  /* Typography */
+  --mood-font-family: 'Inter', sans-serif;
+  --mood-font-weight: 400;
+  --mood-font-weight-bold: 500;
+  --mood-letter-spacing: 0em;
+  --mood-line-height: 1.6;
+
+  /* Motion */
+  --mood-transition-speed: 0.15s;
+  --mood-ease-curve: ease;
+  --mood-entrance-delay: 0.05s;
+  --mood-hover-duration: 0.1s;
+
+  /* Components */
+  --mood-button-radius: 6px;
+  --mood-hover-scale: 1.0;
+  --mood-focus-glow: 0 0 0 2px rgba(76, 201, 240, 0.5);
+  --mood-input-border-width: 1px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--mood-text-primary);
+  overflow-x: hidden;
+  transition: all var(--mood-transition-speed) var(--mood-ease-curve);
+  min-height: 100vh;
+  position: relative;
+  background: black;
+  /* Base fallback */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/mindflayer_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  opacity: 1.0;
+  /* Full visibility of the Mind Flayer */
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(var(--mood-gradient-direction), var(--mood-gradient-start) 0%, var(--mood-gradient-end) 100%);
+  z-index: -1;
+  opacity: 0.2;
+  /* Minimal mood highlighting */
+  transition: all var(--mood-transition-speed) var(--mood-ease-curve);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9D4EDD;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C77DFF;
+}
